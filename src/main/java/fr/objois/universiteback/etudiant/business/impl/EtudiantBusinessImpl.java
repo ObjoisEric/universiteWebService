@@ -2,14 +2,14 @@ package fr.objois.universiteback.etudiant.business.impl;
 
 import fr.objois.universiteback.etudiant.business.IEtudiantBusiness;
 import fr.objois.universiteback.etudiant.domain.Etudiant;
-import fr.objois.universiteback.etudiant.dto.EtudiantDTO;
 import fr.objois.universiteback.etudiant.repository.IEtudiantRepository;
-//import fr.objois.universiteback.note.domain.Note;
-//import fr.objois.universiteback.note.repository.INoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+//import fr.objois.universiteback.note.domain.Note;
+//import fr.objois.universiteback.note.repository.INoteRepository;
 
 @Service
 public class EtudiantBusinessImpl implements IEtudiantBusiness{

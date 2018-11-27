@@ -13,3 +13,11 @@ public class EtudiantDTO {
     Date dateNaissance;
     String sexe;
 }
+
+//Exemple conversion objet Etudiant en objet EtudiantDTO
+//public EtudiantDTO convert(Etudiant etudiant) {
+//      EtudiantDTO etudiantDto = new EtudiantDTP();
+//        etudiantDto.setID(etudiant.getId());
+//
+//      return EtudiantDto;
+// }
