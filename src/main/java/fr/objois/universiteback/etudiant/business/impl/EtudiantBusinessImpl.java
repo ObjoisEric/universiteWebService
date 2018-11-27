@@ -2,6 +2,7 @@ package fr.objois.universiteback.etudiant.business.impl;
 
 import fr.objois.universiteback.etudiant.business.IEtudiantBusiness;
 import fr.objois.universiteback.etudiant.domain.Etudiant;
+import fr.objois.universiteback.etudiant.dto.EtudiantDTO;
 import fr.objois.universiteback.etudiant.repository.IEtudiantRepository;
 //import fr.objois.universiteback.note.domain.Note;
 //import fr.objois.universiteback.note.repository.INoteRepository;
@@ -20,6 +21,7 @@ public class EtudiantBusinessImpl implements IEtudiantBusiness{
 
 	@Override
 	public List<Etudiant> getAllEtudiant() {
+
 
 		return etudiantRepository.findAll();
 	}

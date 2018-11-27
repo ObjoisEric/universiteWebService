@@ -15,6 +15,7 @@ public interface IEtudiantBusiness {
 
 	public void modifierEtudiant(Etudiant etudiant);
 
+
 //	public List<Note> getNoteInfdixEtudiant(Integer id);
 
 	
