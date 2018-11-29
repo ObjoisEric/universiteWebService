@@ -1,6 +1,7 @@
 package fr.objois.universiteback.etudiant.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import fr.objois.universiteback.note.domain.Note;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -18,6 +19,7 @@ public class Etudiant {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Integer id;
+	@JsonProperty("numero")
 	@Column(name="numero_etudiant")
 	Integer numeroEtudiant;
 	@Column(name="nom")
@@ -29,6 +31,7 @@ public class Etudiant {
 	Date dateNaissance;
 	@Column(name="sexe")
 	String sexe;
+
 	@JsonIgnore
 	@OneToMany(mappedBy="etudiant")
 	private List<Note> notes;

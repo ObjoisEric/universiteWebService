@@ -1,6 +1,8 @@
 package fr.objois.universiteback.matiere.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import fr.objois.universiteback.enseignant.domain.Enseignant;
 import fr.objois.universiteback.note.domain.Note;
 import lombok.Data;
@@ -18,6 +20,7 @@ public class Matiere {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @JsonProperty("numero")
     @Column(name = "numero_matiere")
     private Integer numeroMatiere;
     @Column(name = "nom")
@@ -35,6 +38,7 @@ public class Matiere {
     @JoinColumn(name = "id_enseignant")
     private Enseignant enseignant;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "matiere")
     private List<Note> notes;
 

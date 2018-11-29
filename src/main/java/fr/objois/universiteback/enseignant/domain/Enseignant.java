@@ -1,7 +1,9 @@
 package fr.objois.universiteback.enseignant.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import fr.objois.universiteback.matiere.domain.Matiere;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -21,7 +23,7 @@ public class Enseignant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "Numero_Enseignant")
-    private Integer numeroEnseignant;
+    private Integer numero;
     @Column(name = "Nom")
     private String nom;
     @Column(name = "Prenom")
@@ -36,6 +38,7 @@ public class Enseignant {
     @Column(name = "Date_Embauche")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateEmbauche;
+    @JsonIgnore
     @OneToMany(mappedBy = "enseignant")
     private List<Matiere> listMatieres;
 

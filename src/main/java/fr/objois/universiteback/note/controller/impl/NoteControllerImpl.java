@@ -24,11 +24,13 @@ public class NoteControllerImpl implements INoteController {
 	@Override
 	@GetMapping("/notes")
 	public List<Note> getAllNotes() {
-		return noteBusiness.getAllNotes();
+		log.info("getAllNotes");
+
+	    return noteBusiness.getAllNotes();
 	}
 
 	@Override
-	@GetMapping("/notes/{idEtudiant}/{idMatiere}")
+	@GetMapping("/notes/{idEtudiant},{idMatiere}")
 	public Note getUneNote(@PathVariable Integer idEtudiant,@PathVariable Integer idMatiere) {
 
 		return noteBusiness.getNote(idEtudiant,idMatiere);
@@ -45,7 +47,7 @@ public class NoteControllerImpl implements INoteController {
 	}
 
 	@Override
-	@PutMapping("/notes/{idEtudiant}/{idMatiere}")
+	@PutMapping("/notes/{idEtudiant},{idMatiere}")
 	public Note updateNote(@RequestBody Note note,@PathVariable Integer idEtudiant,@PathVariable Integer idMatiere) {
 
 		log.info("update note " + note.getNote());
