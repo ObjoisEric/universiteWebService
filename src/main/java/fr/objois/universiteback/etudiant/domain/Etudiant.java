@@ -18,19 +18,19 @@ public class Etudiant {
 	@Column(name="id")
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Integer id;
+	private Integer id;
 	@JsonProperty("numero")
 	@Column(name="numero_etudiant")
-	Integer numeroEtudiant;
+	private Integer numeroEtudiant;
 	@Column(name="nom")
-	String nom;
+	private String nom;
 	@Column(name="prenom")
-	String prenom;
+	private String prenom;
 	@Column(name="date_naissance")
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	Date dateNaissance;
+	private Date dateNaissance;
 	@Column(name="sexe")
-	String sexe;
+	private String sexe;
 
 	@JsonIgnore
 	@OneToMany(mappedBy="etudiant")
